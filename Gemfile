@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in ninjasign-ruby.gemspec
+# Specify your gem's dependencies in ninja-sign-ruby.gemspec
 gemspec
 
 gem "rake", "~> 13.0"

@@ -4,7 +4,7 @@ require_relative 'lib/ninja-sign/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'ninja-sign-ruby'
-  spec.version = NinjaSign::Ruby::VERSION
+  spec.version = NinjaSign::VERSION
   spec.authors = ['yokozawa0701']
   spec.email = ['d.yoko.0701@gmail.com']
 
