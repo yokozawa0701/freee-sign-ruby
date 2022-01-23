@@ -1,11 +1,10 @@
 # frozen_string_literal: true
 
-require_relative 'ninja-sign/version'
+require "ninja-sign/version"
+require "ninja-sign/client"
 
 module NinjaSign
-  class Error < StandardError; end
-
-  def self.greet
-    'Hello'
+  def self.client(options = {})
+    NinjaSign::Client.new(options)
   end
 end
