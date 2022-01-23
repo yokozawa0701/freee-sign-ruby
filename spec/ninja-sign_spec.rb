@@ -13,20 +13,20 @@ RSpec.describe NinjaSign do
     end
   end
 
-  describe "#endpoint=" do
+  describe ".endpoint=" do
     it "should set endpoint" do
       NinjaSign.endpoint = "https://api.example.com"
       expect(NinjaSign.endpoint).to eq("https://api.example.com")
     end
   end
-  describe "#client_id=" do
+  describe ".client_id=" do
     it "should set client_id" do
       NinjaSign.client_id = "ninja-sign-api+xxx@sight-visit.com"
       expect(NinjaSign.client_id).to eq("ninja-sign-api+xxx@sight-visit.com")
     end
   end
 
-  describe "#client_secret=" do
+  describe ".client_secret=" do
     it "should set client_secret" do
       NinjaSign.client_secret = "_xxx"
       expect(NinjaSign.client_secret).to eq("_xxx")
