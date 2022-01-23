@@ -12,4 +12,5 @@ group :development, :test do
   gem "webmock"
   gem "guard"
   gem "guard-ctags-bundler"
+  gem "pry-byebug"
 end
