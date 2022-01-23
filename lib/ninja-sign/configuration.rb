@@ -15,6 +15,12 @@ module NinjaSign
       yield self
     end
 
+    def options
+      VALID_OPTIONS_KEYS.inject({}) do |option, key|
+        option.merge(key => send(key))
+      end
+    end
+
     def reset
       self.endpoint = ENV["ENDPOINT"]
       self.client_id = ENV["CLIENT_ID"]

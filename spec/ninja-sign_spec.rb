@@ -3,6 +3,8 @@
 require "spec_helper"
 
 RSpec.describe NinjaSign do
+  after { NinjaSign.reset }
+
   it "has a version number" do
     expect(NinjaSign::VERSION).not_to be nil
   end
@@ -40,6 +42,14 @@ RSpec.describe NinjaSign do
           config.send("#{key}=", key)
           expect(NinjaSign.send(key)).to eq(key)
         end
+      end
+    end
+  end
+
+  describe ".options" do
+    NinjaSign::Configuration::VALID_OPTIONS_KEYS.each do |key|
+      it "shourd include #{key}" do
+        expect(NinjaSign.options[key]).to eq NinjaSign.send(key)
       end
     end
   end
