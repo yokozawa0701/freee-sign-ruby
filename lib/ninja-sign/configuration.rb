@@ -10,6 +10,11 @@ module NinjaSign
       base.reset
     end
 
+    # Convenience method to allow configuration options to be set in a block.
+    def configure
+      yield self
+    end
+
     def reset
       self.endpoint = ENV["ENDPOINT"]
       self.client_id = ENV["CLIENT_ID"]

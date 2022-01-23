@@ -32,4 +32,15 @@ RSpec.describe NinjaSign do
       expect(NinjaSign.client_secret).to eq("_xxx")
     end
   end
+
+  describe ".configure" do
+    NinjaSign::Configuration::VALID_OPTIONS_KEYS.each do |key|
+      it "should set #{key}" do
+        NinjaSign.configure do |config|
+          config.send("#{key}=", key)
+          expect(NinjaSign.send(key)).to eq(key)
+        end
+      end
+    end
+  end
 end
