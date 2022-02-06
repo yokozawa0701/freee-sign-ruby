@@ -2,7 +2,10 @@
 
 module NinjaSign
   class Client
+    Dir[File.expand_path("client/*.rb", __dir__)].sort.each { |f| require f }
+
     include Request
+    include Documents
 
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
 
@@ -14,7 +17,7 @@ module NinjaSign
     end
 
     def access_token
-      @access_token ||= request(:post, path: "/v1/token", payload: payload)["access_token"]
+      @access_token ||= post("/v1/token", payload: payload)["access_token"]
     end
 
     private
