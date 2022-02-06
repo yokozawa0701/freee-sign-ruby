@@ -2,6 +2,7 @@
 
 require "ninja-sign/version"
 require "ninja-sign/configuration"
+require "ninja-sign/request"
 require "ninja-sign/client"
 
 module NinjaSign

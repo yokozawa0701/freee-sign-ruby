@@ -25,4 +25,11 @@ RSpec.describe NinjaSign::Client do
       expect(client.client_secret).to eq(ENV["CLIENT_SECRET"])
     end
   end
+
+  describe ".access_token" do
+    it "NINJA SIGNのaccess_tokenを取得" do
+      # Todo mockをいれたら動くようにする
+      # expect(client.access_token).to eq("")
+    end
+  end
 end
