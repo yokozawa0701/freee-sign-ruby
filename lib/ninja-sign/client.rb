@@ -17,7 +17,7 @@ module NinjaSign
     end
 
     def access_token
-      @access_token ||= post("/v1/token", payload: payload)["access_token"]
+      @access_token ||= post("/v1/token", payload: payload).fetch("access_token")
     end
 
     private
