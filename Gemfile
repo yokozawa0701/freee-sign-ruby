@@ -11,6 +11,7 @@ group :development, :test do
   gem "rubocop", "~> 1.21"
   gem "dotenv"
   gem "webmock"
+  gem 'vcr'
   gem "guard"
   gem "guard-ctags-bundler"
   gem "pry-byebug"
