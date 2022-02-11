@@ -13,14 +13,12 @@ RSpec.describe NinjaSign::Client do
 
   describe ".client_id" do
     it "should have a client_id" do
-      # FIXME mockをいれたら環境変数からStringにする
       expect(client.client_id).to eq(ENV["CLIENT_ID"])
     end
   end
 
   describe ".client_secret" do
     it "should have a client_secret" do
-      # FIXME mockをいれたら環境変数からStringにする
       expect(client.client_secret).to eq(ENV["CLIENT_SECRET"])
     end
   end
