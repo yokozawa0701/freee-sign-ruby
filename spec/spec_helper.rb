@@ -1,7 +1,11 @@
 # frozen_string_literal: true
 
 require "ninja-sign"
+require "dotenv/load"
 require "pry"
+
+# Todo なんかcredみたいなメソッドにしてそっちで代入するようにした方が良いのか？
+NinjaSign.reset
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
