@@ -7,13 +7,14 @@ module NinjaSign
     include Request
     include Documents
 
-    attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
+    attr_accessor(:endpoint, *Configuration::VALID_OPTIONS_KEYS)
 
     def initialize(options = {})
       options = NinjaSign.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key]) if options.key?(key)
       end
+      @endpoint = NinjaSign::ENDPOINT
     end
 
     def access_token

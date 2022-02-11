@@ -8,6 +8,8 @@ require "ninja-sign/client"
 module NinjaSign
   extend Configuration
 
+  ENDPOINT = "https://ninja-sign.com"
+
   def self.client(options = {})
     NinjaSign::Client.new(options)
   end

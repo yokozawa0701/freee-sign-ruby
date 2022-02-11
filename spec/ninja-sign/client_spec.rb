@@ -7,8 +7,7 @@ RSpec.describe NinjaSign::Client do
 
   describe ".endpoint" do
     it "should have an endpoint" do
-      # FIXME mockをいれたら環境変数からStringにする
-      expect(client.endpoint).to eq(ENV["ENDPOINT"])
+      expect(client.endpoint).to eq("https://ninja-sign.com")
     end
   end
 
@@ -28,8 +27,7 @@ RSpec.describe NinjaSign::Client do
 
   describe ".access_token" do
     it "NINJA SIGNのaccess_tokenを取得" do
-      # Todo mockをいれたら動くようにする
-      # expect(client.access_token).to eq("")
+      expect(client.access_token).not_to eq(nil)
     end
   end
 end

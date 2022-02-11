@@ -2,7 +2,7 @@
 
 module NinjaSign
   module Configuration
-    VALID_OPTIONS_KEYS = %i[endpoint client_id client_secret].freeze
+    VALID_OPTIONS_KEYS = %i[client_id client_secret access_token].freeze
 
     attr_accessor(*VALID_OPTIONS_KEYS)
 
@@ -22,9 +22,9 @@ module NinjaSign
     end
 
     def reset
-      self.endpoint = ENV["ENDPOINT"]
       self.client_id = ENV["CLIENT_ID"]
       self.client_secret = ENV["CLIENT_SECRET"]
+      self.access_token = ENV["ACCESS_TOKEN"]
     end
   end
 end
