@@ -18,7 +18,7 @@ module NinjaSign
     end
 
     def access_token
-      @access_token ||= post("/v1/token", payload: payload).fetch("access_token")
+      @access_token ||= post("/v1/token", payload: credentials).fetch("access_token")
     end
 
     private
@@ -27,7 +27,7 @@ module NinjaSign
       @connection ||= build_connection(endpoint)
     end
 
-    def payload
+    def credentials
       { "client_id" => client_id, "client_secret" => client_secret }
     end
   end
