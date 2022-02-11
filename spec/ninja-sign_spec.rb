@@ -3,8 +3,6 @@
 require "spec_helper"
 
 RSpec.describe NinjaSign do
-  after { NinjaSign.reset }
-
   it "has a version number" do
     expect(NinjaSign::VERSION).not_to be nil
   end
