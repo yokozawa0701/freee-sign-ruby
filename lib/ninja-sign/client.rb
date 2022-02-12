@@ -7,7 +7,8 @@ module NinjaSign
     include Request
     include Documents
 
-    attr_accessor(:endpoint, *Configuration::VALID_OPTIONS_KEYS)
+    attr_reader :endpoint
+    attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
 
     def initialize(options = {})
       options = NinjaSign.options.merge(options)
@@ -23,6 +24,7 @@ module NinjaSign
 
     private
 
+    # Todo RequestModuleがconnectionを知っている必要があるのだがそれは疎結合にしなくて良いのか？
     def connection
       @connection ||= build_connection(endpoint)
     end
