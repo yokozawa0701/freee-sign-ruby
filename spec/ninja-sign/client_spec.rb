@@ -7,7 +7,7 @@ RSpec.describe NinjaSign::Client do
 
   describe ".endpoint" do
     it "should have an endpoint" do
-      expect(client.endpoint).to eq("https://ninja-sign.com")
+      expect(client.endpoint).to eq(NinjaSign::ENDPOINT)
     end
   end
 
