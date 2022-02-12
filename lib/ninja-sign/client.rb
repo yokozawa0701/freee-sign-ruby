@@ -22,12 +22,12 @@ module NinjaSign
       @access_token ||= post("/v1/token", payload: credentials).fetch("access_token")
     end
 
-    private
-
     # Todo RequestModuleがconnectionを知っている必要があるのだがそれは疎結合にしなくて良いのか？
     def connection
       @connection ||= build_connection(endpoint)
     end
+
+    private
 
     def credentials
       { "client_id" => client_id, "client_secret" => client_secret }

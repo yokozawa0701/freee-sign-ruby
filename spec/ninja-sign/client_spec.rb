@@ -23,6 +23,13 @@ RSpec.describe NinjaSign::Client do
     end
   end
 
+  describe ".connection" do
+    it "should have a connection" do
+      expect(client.connection).not_to eq(nil)
+      expect(client.connection.class).to eq(Faraday::Connection)
+    end
+  end
+
   describe ".access_token" do
     it "NINJA SIGNのaccess_tokenを取得" do
       expect(client.access_token).not_to eq(nil)
