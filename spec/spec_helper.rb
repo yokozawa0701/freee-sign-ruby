@@ -2,6 +2,7 @@
 
 require "ninja-sign"
 require "dotenv/load"
+require "webmock/rspec"
 require "pry"
 
 RSpec.configure do |config|
