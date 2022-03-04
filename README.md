@@ -24,7 +24,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+You need to setup `CLIENT_ID` and `CLIENT_SECRET`.
+
+```sh
+$ cp .env.sample .env
+$ vi .env
+$ direnv allow
+direnv: export +CLIENT_ID +CLIENT_SECRET
+```
 
 ## Development
 
