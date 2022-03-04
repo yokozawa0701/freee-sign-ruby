@@ -6,6 +6,10 @@ module NinjaSign
       def documents
         get("/v1/documents")
       end
+
+      def document(id)
+        get("/v1/documents/#{id}")
+      end
     end
   end
 end
