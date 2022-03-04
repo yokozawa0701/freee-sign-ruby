@@ -3,8 +3,8 @@
 module NinjaSign
   class Client
     module Documents
-      def documents
-        get("/v1/documents")
+      def documents(params = {})
+        get("/v1/documents", params)
       end
 
       def document(id)

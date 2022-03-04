@@ -4,9 +4,10 @@ require "faraday"
 
 module NinjaSign
   module Request
-    def get(path)
+    def get(path, params = {})
       response = connection.get do |request|
         set_authorization_header!(request, path)
+        request.params.merge!(params)
         request.url path
       end
       JSON.parse(response.body)
