@@ -31,8 +31,21 @@ RSpec.describe NinjaSign::Client do
   end
 
   describe ".access_token" do
+    before do
+      stub_request(:post, URI.join(NinjaSign::ENDPOINT, 'v1/token').to_s).
+        with(
+          body: { client_id: ENV["CLIENT_ID"], client_secret: ENV["CLIENT_SECRET"] },
+          headers: {
+            'Accept'=>'application/json',
+            'Accept-Encoding'=>'gzip;q=1.0,deflate;q=0.6,identity;q=0.3',
+            'Content-Type'=>'application/json',
+            'User-Agent'=>'Faraday v2.2.0'
+          }).
+        to_return(status: 201, body: '{"access_token":"fake_token","expires_in":86400,"token_type":"Bearer"}', headers: {})
+    end
+
     it "NINJA SIGNのaccess_tokenを取得" do
-      expect(client.access_token).not_to eq(nil)
+      expect(client.access_token).to eq "fake_token"
     end
   end
 end
