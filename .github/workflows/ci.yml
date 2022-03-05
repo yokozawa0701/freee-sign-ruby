@@ -15,8 +15,8 @@ jobs:
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.99.0
-          with:
-            bundler-cache: true
+        with:
+          bundler-cache: true
 
       - name: Run rubocop with reviewdog
         uses: reviewdog/action-rubocop@v2
@@ -39,8 +39,8 @@ jobs:
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1.99.0
-          with:
-            bundler-cache: true
+        with:
+          bundler-cache: true
 
       - name: Run Rspec
         run: bundle exec rspec
