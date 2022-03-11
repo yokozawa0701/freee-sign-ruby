@@ -18,5 +18,17 @@ RSpec.configure do |config|
 
   config.before(:all) do
     FreeeSign.reset
+    FreeeSign.access_token = 'access_token'
   end
+end
+
+def load_fixture(name)
+  File.new(File.dirname(__FILE__) + "/fixtures/#{name}.json")
+end
+
+# GET
+def stub_get(path, fixture, status_code=200)
+  stub_request(:get, "#{FreeeSign::ENDPOINT}#{path}").
+    with(:headers => {'Authorization' => "Bearer #{FreeeSign.access_token}", 'Content-Type' => 'application/json'}).
+    to_return(body: load_fixture(fixture), status: status_code)
 end
