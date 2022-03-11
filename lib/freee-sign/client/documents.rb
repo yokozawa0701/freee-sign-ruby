@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module NinjaSign
+module FreeeSign
   class Client
     module Documents
       def documents(params = {})

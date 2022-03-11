@@ -17,6 +17,6 @@ RSpec.configure do |config|
   end
 
   config.before(:all) do
-    NinjaSign.reset
+    FreeeSign.reset
   end
 end

@@ -2,12 +2,12 @@
 
 require "spec_helper"
 
-RSpec.describe NinjaSign::Client do
-  let(:client) { NinjaSign::Client.new }
+RSpec.describe FreeeSign::Client do
+  let(:client) { FreeeSign::Client.new }
 
   describe ".endpoint" do
     it "should have an endpoint" do
-      expect(client.endpoint).to eq(NinjaSign::ENDPOINT)
+      expect(client.endpoint).to eq(FreeeSign::ENDPOINT)
     end
   end
 
@@ -32,7 +32,7 @@ RSpec.describe NinjaSign::Client do
 
   describe ".access_token" do
     before do
-      stub_request(:post, URI.join(NinjaSign::ENDPOINT, 'v1/token').to_s).
+      stub_request(:post, URI.join(FreeeSign::ENDPOINT, 'v1/token').to_s).
         with(
           body: { client_id: ENV["CLIENT_ID"], client_secret: ENV["CLIENT_SECRET"] },
           headers: {

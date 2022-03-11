@@ -4,7 +4,7 @@ require_relative "lib/freee-sign/version"
 
 Gem::Specification.new do |spec|
   spec.name = "freee-sign-ruby"
-  spec.version = NinjaSign::VERSION
+  spec.version = FreeeSign::VERSION
   spec.authors = ["yokozawa0701"]
   spec.email = ["d.yoko.0701@gmail.com"]
 

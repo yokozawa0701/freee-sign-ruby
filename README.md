@@ -1,6 +1,6 @@
 [API Document](https://ninja-sign.com/v1/docs#/)
 
-# NinjaSign::Ruby
+# FreeeSign::Ruby
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/freee-sign/ruby`. To experiment with that code, run `bin/console` for an interactive prompt.
 
@@ -49,4 +49,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the NinjaSign::Ruby project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/freee-sign-ruby/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the FreeeSign::Ruby project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/freee-sign-ruby/blob/master/CODE_OF_CONDUCT.md).

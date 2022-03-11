@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module NinjaSign
+module FreeeSign
   module Configuration
     VALID_OPTIONS_KEYS = %i[client_id client_secret access_token].freeze
 

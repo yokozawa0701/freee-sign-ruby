@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-module NinjaSign
+module FreeeSign
   class Client
     Dir[File.expand_path("client/*.rb", __dir__)].sort.each { |f| require f }
 
@@ -11,11 +11,11 @@ module NinjaSign
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
 
     def initialize(options = {})
-      options = NinjaSign.options.merge(options)
+      options = FreeeSign.options.merge(options)
       Configuration::VALID_OPTIONS_KEYS.each do |key|
         send("#{key}=", options[key]) if options.key?(key)
       end
-      @endpoint = NinjaSign::ENDPOINT
+      @endpoint = FreeeSign::ENDPOINT
     end
 
     def access_token

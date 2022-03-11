@@ -5,12 +5,12 @@ require "freee-sign/configuration"
 require "freee-sign/request"
 require "freee-sign/client"
 
-module NinjaSign
+module FreeeSign
   extend Configuration
 
   ENDPOINT = "https://ninja-sign.com"
 
   def self.client(options = {})
-    NinjaSign::Client.new(options)
+    FreeeSign::Client.new(options)
   end
 end

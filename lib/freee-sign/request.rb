@@ -2,7 +2,7 @@
 
 require "faraday"
 
-module NinjaSign
+module FreeeSign
   module Request
     def get(path, params = {})
       response = connection.get do |request|
