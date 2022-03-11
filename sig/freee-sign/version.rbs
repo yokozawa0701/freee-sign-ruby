@@ -1,0 +1,6 @@
+# TypeProf 0.21.2
+
+# Classes
+module FreeeSign
+  VERSION: String
+end
