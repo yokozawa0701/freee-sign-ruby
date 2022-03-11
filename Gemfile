@@ -2,7 +2,7 @@
 
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in ninja-sign-ruby.gemspec
+# Specify your gem's dependencies in freee-sign-ruby.gemspec
 gemspec
 
 group :development, :test do

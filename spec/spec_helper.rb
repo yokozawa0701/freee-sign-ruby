@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "ninja-sign"
+require "freee-sign"
 require "dotenv/load"
 require "webmock/rspec"
 require "pry"

@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require "ninja-sign/version"
-require "ninja-sign/configuration"
-require "ninja-sign/request"
-require "ninja-sign/client"
+require "freee-sign/version"
+require "freee-sign/configuration"
+require "freee-sign/request"
+require "freee-sign/client"
 
 module NinjaSign
   extend Configuration
