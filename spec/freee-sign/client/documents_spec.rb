@@ -8,12 +8,24 @@ RSpec.describe FreeeSign::Client::Documents do
   describe "#documents" do
     subject { client.documents(params) }
 
-    before { stub_get("/v1/documents", "documents") }
+    before { stub_get("/v1/documents", "documents").with(query: params) }
 
     context "with no params" do
       let(:params) { {} }
 
-      it { expect(subject.size).to eq 2 }
+      it do
+        expect(subject.size).to eq 2
+        expect(a_get("/v1/documents").with(query: params)).to have_been_made.once
+      end
+    end
+
+    context "with :per_page" do
+      let(:params) { { per_page: 1 } }
+
+      it do
+        subject
+        expect(a_get("/v1/documents").with(query: params)).to have_been_made.once
+      end
     end
   end
 end
