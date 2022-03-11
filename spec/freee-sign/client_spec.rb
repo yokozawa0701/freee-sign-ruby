@@ -41,11 +41,11 @@ RSpec.describe FreeeSign::Client do
             'Content-Type'=>'application/json',
             'User-Agent'=>'Faraday v2.2.0'
           }).
-        to_return(status: 201, body: '{"access_token":"fake_token","expires_in":86400,"token_type":"Bearer"}', headers: {})
+        to_return(status: 201, body: '{"access_token":"access_token","expires_in":86400,"token_type":"Bearer"}', headers: {})
     end
 
     it "NINJA SIGNのaccess_tokenを取得" do
-      expect(client.access_token).to eq "fake_token"
+      expect(client.access_token).to eq "access_token"
     end
   end
 end
