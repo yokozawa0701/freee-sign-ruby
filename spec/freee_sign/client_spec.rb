@@ -42,11 +42,61 @@ RSpec.describe FreeeSign::Client do
             'User-Agent' => 'Faraday v2.2.0'
           }
         )
-        .to_return(status: 201, body: '{"access_token":"access_token","expires_in":86400,"token_type":"Bearer"}', headers: {})
+        .to_return(response)
     end
 
-    it 'NINJA SIGNのaccess_tokenを取得' do
-      expect(client.access_token).to eq 'access_token'
+    context 'success' do
+      let(:response) do
+        {
+          status: 201, body: '{"access_token":"access_token","expires_in":86400,"token_type":"Bearer"}', headers: {}
+        }
+      end
+
+      it 'returns access_token' do
+        expect(client.access_token).to eq 'access_token'
+      end
+    end
+
+    context 'unauthorized' do
+      let(:response) do
+        {
+          status: 401,
+          body: '{"error":"unauthorized", "message":"クライアントの認証に失敗しました。client_id・client_secretを確認してください"}',
+          headers: {}
+        }
+      end
+
+      it 'does NOT return access_token' do
+        expect { client.access_token }.to raise_error(described_class::AccessTokenCreationFailed)
+      end
+    end
+
+    context 'disallowed IP address' do
+      let(:response) do
+        {
+          status: 403,
+          body: '{"error":"forbidden", "message":"許可されたIPアドレスからのアクセスではありません。IPアドレス制限を確認してください"}',
+          headers: {}
+        }
+      end
+
+      it 'does NOT return access_token' do
+        expect { client.access_token }.to raise_error(described_class::AccessTokenCreationFailed)
+      end
+    end
+
+    context 'Internal Server Error' do
+      let(:response) do
+        {
+          status: 500,
+          body: '{"error":"internal_server_error", "message":"大変申し訳ございません。エラーが発生しました。今しばらくお待ちいただき再度お試しください"}',
+          headers: {}
+        }
+      end
+
+      it 'does NOT return access_token' do
+        expect { client.access_token }.to raise_error(described_class::AccessTokenCreationFailed)
+      end
     end
   end
 end
