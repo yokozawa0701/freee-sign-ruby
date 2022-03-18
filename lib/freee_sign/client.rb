@@ -6,6 +6,7 @@ module FreeeSign
 
     include Request
     include Documents
+    include Templates
 
     attr_reader :endpoint
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
