@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require 'freee-sign'
+require 'freee_sign'
 require 'dotenv/load'
 require 'webmock/rspec'
 require 'pry'

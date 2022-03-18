@@ -8,8 +8,5 @@ Metrics/BlockLength:
 Style/Documentation:
   Enabled: false
 
-Naming/FileName:
-  Enabled: false
-
 Layout/LineLength:
   Enabled: false

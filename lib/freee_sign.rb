@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
-require 'freee-sign/version'
-require 'freee-sign/configuration'
-require 'freee-sign/request'
-require 'freee-sign/client'
+require 'freee_sign/version'
+require 'freee_sign/configuration'
+require 'freee_sign/request'
+require 'freee_sign/client'
 
 module FreeeSign
   extend Configuration

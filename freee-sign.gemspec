@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'lib/freee-sign/version'
+require_relative 'lib/freee_sign/version'
 
 Gem::Specification.new do |spec|
   spec.name = 'freee-sign-ruby'
