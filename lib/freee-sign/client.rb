@@ -2,7 +2,7 @@
 
 module FreeeSign
   class Client
-    Dir[File.expand_path("client/*.rb", __dir__)].sort.each { |f| require f }
+    Dir[File.expand_path('client/*.rb', __dir__)].sort.each { |f| require f }
 
     include Request
     include Documents
@@ -19,7 +19,7 @@ module FreeeSign
     end
 
     def access_token
-      @access_token ||= post("/v1/token", payload: credentials).fetch("access_token")
+      @access_token ||= post('/v1/token', payload: credentials).fetch('access_token')
     end
 
     # Todo RequestModuleがconnectionを知っている必要があるのだがそれは疎結合にしなくて良いのか？
@@ -30,7 +30,7 @@ module FreeeSign
     private
 
     def credentials
-      { "client_id" => client_id, "client_secret" => client_secret }
+      { 'client_id' => client_id, 'client_secret' => client_secret }
     end
   end
 end

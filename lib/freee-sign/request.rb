@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "faraday"
+require 'faraday'
 
 module FreeeSign
   module Request
@@ -26,8 +26,8 @@ module FreeeSign
     private
 
     def build_connection(endpoint, headers: {})
-      headers["Accept"] ||= "application/json"
-      headers["Content-Type"] ||= "application/json"
+      headers['Accept'] ||= 'application/json'
+      headers['Content-Type'] ||= 'application/json'
       Faraday.new(
         url: endpoint,
         headers: headers
@@ -35,14 +35,14 @@ module FreeeSign
     end
 
     def set_authorization_header!(request, path)
-      return if path == "/v1/token"
+      return if path == '/v1/token'
 
       request.headers.merge!(authorization_header)
     end
 
     def authorization_header
       {
-        "Authorization" => "Bearer #{access_token}"
+        'Authorization' => "Bearer #{access_token}"
       }
     end
   end
