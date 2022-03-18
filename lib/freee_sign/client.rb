@@ -2,6 +2,8 @@
 
 module FreeeSign
   class Client
+    class AccessTokenCreationFailed < StandardError; end
+
     Dir[File.expand_path('client/*.rb', __dir__)].sort.each { |f| require f }
 
     include Request
@@ -20,7 +22,11 @@ module FreeeSign
     end
 
     def access_token
-      @access_token ||= post('/v1/token', payload: credentials).fetch('access_token')
+      response = post('/v1/token', payload: credentials)
+
+      raise AccessTokenCreationFailed, response.to_json unless response.key?('access_token')
+
+      @access_token ||= response['access_token']
     end
 
     # Todo RequestModuleがconnectionを知っている必要があるのだがそれは疎結合にしなくて良いのか？

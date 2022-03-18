@@ -8,6 +8,10 @@ RSpec.describe FreeeSign::Client::Documents do
   describe '#documents' do
     subject { client.documents(params) }
 
+    before do
+      allow_any_instance_of(FreeeSign::Client).to receive(:access_token).and_return('access_token')
+    end
+
     context 'with no params' do
       let(:params) { {} }
 
