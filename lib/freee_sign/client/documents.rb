@@ -4,7 +4,7 @@ module FreeeSign
   class Client
     module Documents
       def documents(params = {})
-        get("/v1/documents", params)
+        get('/v1/documents', params)
       end
 
       def document(id)

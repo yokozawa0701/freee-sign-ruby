@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # A sample Guardfile
 # More info at https://github.com/guard/guard#readme
 
@@ -15,7 +17,7 @@
 #
 # and, you'll have to watch "config/Guardfile" instead of "Guardfile"
 
-guard 'ctags-bundler', :src_path => ["lib", "spec/support"] do
-  watch(/^(lib|spec\/support)\/.*\.rb$/)
+guard 'ctags-bundler', src_path: ['lib', 'spec/support'] do
+  watch(%r{^(lib|spec/support)/.*\.rb$})
   watch('Gemfile.lock')
 end

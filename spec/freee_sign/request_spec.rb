@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require "spec_helper"
+require 'spec_helper'
 
 RSpec.describe FreeeSign::Request do
   let(:test_class) { Struct.new(:request) { include FreeeSign::Request } }

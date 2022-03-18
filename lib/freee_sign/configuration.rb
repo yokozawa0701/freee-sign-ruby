@@ -22,8 +22,8 @@ module FreeeSign
     end
 
     def reset
-      self.client_id = ENV["CLIENT_ID"]
-      self.client_secret = ENV["CLIENT_SECRET"]
+      self.client_id = ENV['CLIENT_ID']
+      self.client_secret = ENV['CLIENT_SECRET']
     end
   end
 end
