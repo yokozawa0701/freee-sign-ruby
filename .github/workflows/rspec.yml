@@ -1,7 +1,5 @@
-name: CI
-
+name: Test
 on: [push]
-
 jobs:
   rspec:
     name: Run rspec
