@@ -12,4 +12,4 @@ Naming/FileName:
   Enabled: false
 
 Layout/LineLength:
-  Max: 120
+  Enabled: false
