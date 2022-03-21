@@ -8,7 +8,7 @@ require 'freee_sign/client'
 module FreeeSign
   extend Configuration
 
-  ENDPOINT = 'https://ninja-sign.com'
+  ENDPOINT = ENV.fetch('ENDPOINT', 'https://ninja-sign.com')
 
   def self.client(options = {})
     FreeeSign::Client.new(options)
