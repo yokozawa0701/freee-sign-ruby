@@ -34,4 +34,18 @@ RSpec.describe FreeeSign::Client::Templates do
       end
     end
   end
+
+  describe '#templates(template_id)' do
+    subject { client.template(1) }
+
+    before do
+      allow_any_instance_of(FreeeSign::Client).to receive(:access_token).and_return('access_token')
+      stub_get('/v1/templates/1', 'template')
+    end
+
+    it do
+      subject
+      expect(a_get('/v1/templates/1')).to have_been_made.once
+    end
+  end
 end
