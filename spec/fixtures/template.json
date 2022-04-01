@@ -1,0 +1,26 @@
+{
+  "id": 1,
+  "title": "string",
+  "items": [
+    {
+      "name": "string",
+      "role": "owner",
+      "item_id": 0,
+      "order": 0,
+      "input_type": "string",
+      "item_options": [
+        {
+          "value": "string"
+        }
+      ],
+      "required": true,
+      "signatures": [
+        {
+          "x": 0,
+          "y": 0,
+          "page": 0
+        }
+      ]
+    }
+  ]
+}
