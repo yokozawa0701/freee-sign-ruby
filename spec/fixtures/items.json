@@ -1,0 +1,8 @@
+[
+  {
+    "item_id": 1,
+    "type": "string",
+    "name": "item_display_name",
+    "value": "item_value"
+  }
+]

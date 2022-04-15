@@ -23,6 +23,15 @@ module FreeeSign
       JSON.parse(response.body)
     end
 
+    def put(path, payload: nil)
+      response = connection.put do |request|
+        set_authorization_header!(request, path)
+        request.url path
+        request.body = payload.to_json
+      end
+      JSON.parse(response.body)
+    end
+
     private
 
     def build_connection(endpoint, headers: {})
