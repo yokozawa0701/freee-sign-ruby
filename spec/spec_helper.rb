@@ -49,3 +49,15 @@ def a_post(path)
   a_request(:post, "#{FreeeSign::ENDPOINT}#{path}")
     .with(headers: { 'Authorization' => "Bearer #{FreeeSign.access_token}", 'Content-Type' => 'application/json' })
 end
+
+# PUT
+def stub_put(path, fixture)
+  stub_request(:put, "#{FreeeSign::ENDPOINT}#{path}")
+    .with(headers: { 'Authorization' => "Bearer #{FreeeSign.access_token}", 'Content-Type' => 'application/json' })
+    .to_return(body: load_fixture(fixture))
+end
+
+def a_put(path)
+  a_request(:put, "#{FreeeSign::ENDPOINT}#{path}")
+    .with(headers: { 'Authorization' => "Bearer #{FreeeSign.access_token}", 'Content-Type' => 'application/json' })
+end
