@@ -1,0 +1,28 @@
+{
+  "title": "秘密保持契約書",
+  "document_code": "acd3f41ee1bc0acb339f60ef3e0b2712b05eb323616cf18c386705de4dc0e9ae",
+  "es_type": "esign",
+  "sending": {
+    "sender": "忍者太郎",
+    "email": "taro@ninja-sign.com",
+    "sent_at": "2022-04-15T09:37:26.419Z"
+  },
+  "signatures": [
+    {
+      "signer": "忍者一郎",
+      "email": "ichiro@ninja-sign.com",
+      "signed_at": "2022-04-15T09:37:26.419Z"
+    }
+  ],
+  "conclusion": {
+    "concluder": "忍者二郎",
+    "email": "jiro@ninja-sign.com",
+    "concluded_at": "2022-04-15T09:37:26.419Z"
+  },
+  "timestamps": [
+    {
+      "action": "締結完了",
+      "date": "2022-04-15T09:37:26.419Z"
+    }
+  ]
+}
