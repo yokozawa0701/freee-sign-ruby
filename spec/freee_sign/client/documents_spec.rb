@@ -58,9 +58,9 @@ RSpec.describe FreeeSign::Client::Documents do
       let(:payload) do
         {
           item_id: 1,
-          type: "string",
-          name: "item_display_name",
-          value: "item_value"
+          type: 'string',
+          name: 'item_display_name',
+          value: 'item_value'
         }
       end
 
@@ -71,10 +71,10 @@ RSpec.describe FreeeSign::Client::Documents do
         expect(a_put("/v1/documents/#{document_id}/meta")).to have_been_made.once
       end
 
-      it 'should return a response of items'do
+      it 'should return a response of items' do
         meta_items = subject
-        expect(meta_items.first['name']).to eq "item_display_name"
-        expect(meta_items.first['value']).to eq "item_value"
+        expect(meta_items.first['name']).to eq 'item_display_name'
+        expect(meta_items.first['value']).to eq 'item_value'
       end
     end
   end
