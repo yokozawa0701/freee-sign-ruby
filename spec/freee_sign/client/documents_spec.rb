@@ -35,6 +35,21 @@ RSpec.describe FreeeSign::Client::Documents do
     end
   end
 
+  describe '#create_document' do
+    subject { client.create_document }
+
+    before do
+      allow_any_instance_of(FreeeSign::Client).to receive(:access_token).and_return('access_token')
+    end
+
+    before { stub_post('/v1/documents', 'documents') }
+
+    it do
+      subject
+      expect(a_post('/v1/documents')).to have_been_made.once
+    end
+  end
+
   describe '#contract_certificate' do
     subject { client.contract_certificate(document_id) }
 
