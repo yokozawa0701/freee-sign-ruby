@@ -70,6 +70,12 @@ RSpec.describe FreeeSign::Client::Documents do
         subject
         expect(a_put("/v1/documents/#{document_id}/meta")).to have_been_made.once
       end
+
+      it 'should return a response of items'do
+        meta_items = subject
+        expect(meta_items.first['name']).to eq "item_display_name"
+        expect(meta_items.first['value']).to eq "item_value"
+      end
     end
   end
 end
