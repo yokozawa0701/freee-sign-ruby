@@ -9,6 +9,7 @@ module FreeeSign
     include Request
     include Documents
     include Templates
+    include Teams
 
     attr_reader :endpoint
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
