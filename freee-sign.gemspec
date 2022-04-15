@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.authors = ['yokozawa0701']
   spec.email = ['d.yoko.0701@gmail.com']
 
-  spec.summary = 'NINJA SIGNのAPIをRubyで簡単に叩くためのGem'
+  spec.summary = 'freeeサインのAPIをRubyで簡単に叩くためのGem'
   # spec.description = "TODO: Write a longer description or delete this line."
   spec.homepage = 'https://github.com/yokozawa0701/freee-sign-ruby'
   spec.license = 'MIT'
