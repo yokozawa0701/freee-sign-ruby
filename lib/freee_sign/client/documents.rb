@@ -10,6 +10,10 @@ module FreeeSign
       def document(id)
         get("/v1/documents/#{id}")
       end
+
+      def contract_certificate(document_id)
+        get("/v1/documents/#{document_id}/contract_certificate")
+      end
     end
   end
 end
