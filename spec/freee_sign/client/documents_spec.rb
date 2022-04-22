@@ -53,29 +53,27 @@ RSpec.describe FreeeSign::Client::Documents do
   describe '#meta_items' do
     subject { client.meta_items(document_id, payload: payload) }
 
-    context 'application/json' do
-      let(:document_id) { 1 }
-      let(:payload) do
-        {
-          item_id: 1,
-          type: 'string',
-          name: 'item_display_name',
-          value: 'item_value'
-        }
-      end
+    let(:document_id) { 1 }
+    let(:payload) do
+      {
+        item_id: 1,
+        type: 'string',
+        name: 'item_display_name',
+        value: 'item_value'
+      }
+    end
 
-      before { stub_put("/v1/documents/#{document_id}/meta", 'items') }
+    before { stub_put("/v1/documents/#{document_id}/meta", 'items') }
 
-      it do
-        subject
-        expect(a_put("/v1/documents/#{document_id}/meta")).to have_been_made.once
-      end
+    it do
+      subject
+      expect(a_put("/v1/documents/#{document_id}/meta")).to have_been_made.once
+    end
 
-      it 'should return a response of items' do
-        meta_items = subject
-        expect(meta_items.first['name']).to eq 'item_display_name'
-        expect(meta_items.first['value']).to eq 'item_value'
-      end
+    it 'should return a response of items' do
+      meta_items = subject
+      expect(meta_items.first['name']).to eq 'item_display_name'
+      expect(meta_items.first['value']).to eq 'item_value'
     end
   end
 end
