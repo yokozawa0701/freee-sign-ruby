@@ -10,6 +10,7 @@ module FreeeSign
     include Documents
     include Templates
     include Teams
+    include Users
 
     attr_reader :endpoint
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
