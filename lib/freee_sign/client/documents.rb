@@ -11,6 +11,10 @@ module FreeeSign
         get("/v1/documents/#{id}")
       end
 
+      def create_document
+        post('/v1/documents')
+      end
+
       def contract_certificate(document_id)
         get("/v1/documents/#{document_id}/contract_certificate")
       end
