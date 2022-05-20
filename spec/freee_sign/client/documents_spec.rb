@@ -91,4 +91,17 @@ RSpec.describe FreeeSign::Client::Documents do
       expect(meta_items.first['value']).to eq 'item_value'
     end
   end
+
+  describe '#accessible_documents' do
+    subject { client.accessible_documents(user_id) }
+
+    let(:user_id) { 1 }
+
+    before { stub_get("/v1/users/#{user_id}/documents", 'accessible_documents') }
+
+    it do
+      subject
+      expect(a_get("/v1/users/#{user_id}/documents")).to have_been_made.once
+    end
+  end
 end
