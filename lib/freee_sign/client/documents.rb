@@ -15,6 +15,10 @@ module FreeeSign
         post('/v1/documents')
       end
 
+      def reject_document(id, payload:)
+        post("/v1/documents/#{id}/rejection", payload: payload)
+      end
+
       def contract_certificate(document_id)
         get("/v1/documents/#{document_id}/contract_certificate")
       end
