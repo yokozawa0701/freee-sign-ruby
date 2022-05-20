@@ -11,6 +11,7 @@ module FreeeSign
     include Templates
     include Teams
     include Users
+    include SealImages
 
     attr_reader :endpoint
     attr_accessor(*Configuration::VALID_OPTIONS_KEYS)
