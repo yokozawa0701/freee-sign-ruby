@@ -50,6 +50,28 @@ RSpec.describe FreeeSign::Client::Documents do
     end
   end
 
+  describe '#reject_document' do
+    subject { client.reject_document(document_id, payload: payload) }
+    let(:document_id) { 1 }
+    let(:payload) do
+      {
+        rejector_id: 1,
+        message: 'test message'
+      }
+    end
+
+    before do
+      allow_any_instance_of(FreeeSign::Client).to receive(:access_token).and_return('access_token')
+    end
+
+    before { stub_post("/v1/documents/#{document_id}/rejection", 'documents') }
+
+    it do
+      subject
+      expect(a_post("/v1/documents/#{document_id}/rejection")).to have_been_made.once
+    end
+  end
+
   describe '#contract_certificate' do
     subject { client.contract_certificate(document_id) }
 
