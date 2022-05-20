@@ -6,6 +6,10 @@ module FreeeSign
       def team
         get('/v1/team')
       end
+
+      def teams(params = {})
+        get('/v1/teams', params)
+      end
     end
   end
 end
