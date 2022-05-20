@@ -22,6 +22,10 @@ module FreeeSign
       def meta_items(document_id, payload:)
         put("/v1/documents/#{document_id}/meta", payload: payload)
       end
+
+      def accessible_documents(user_id)
+        get("/v1/users/#{user_id}/documents")
+      end
     end
   end
 end
