@@ -10,6 +10,7 @@ module FreeeSign
     include Documents
     include Templates
     include Teams
+    include Users
     include SealImages
 
     attr_reader :endpoint

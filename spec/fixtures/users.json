@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "team_id": 1,
+    "status": "receiving_only",
+    "email": "user1@example.com",
+    "full_name": "string"
+  },
+  {
+    "id": 2,
+    "team_id": 2,
+    "status": "receiving_only",
+    "email": "user2@example.com",
+    "full_name": "string"
+  }
+]
